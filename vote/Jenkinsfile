@@ -13,7 +13,7 @@ pipeline {
       steps{
         echo 'Compiling vote app..'
         dir('vote'){
-          sh 'pip install -i requirements.txt'
+          sh 'pip install -r requirements.txt'
         }
       }
   }
@@ -23,7 +23,7 @@ pipeline {
     changeset "**/vote/**"
     }
     steps{
-        echo 'Running Unit Tets on vote app..'
+        echo 'Running Unit Tests on vote app..'
         dir('vote'){
         sh 'nose tests -v'
       }
