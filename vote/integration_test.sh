@@ -15,14 +15,14 @@ docker-compose run --rm integration /test/test.sh
 if [ $? -eq 0 ]
 then
   echo "---------------------------------------"
-  echo "INTEGRATION TESTS PASSED....."
+  echo "INTEGRATION TESTS PASSED.....!"
   echo "---------------------------------------"
   docker-compose down
   cd ..
   exit 0
 else
   echo "---------------------------------------"
-  echo "INTEGRATION TESTS FAILED....."
+  echo "INTEGRATION TESTS FAILED.....!"
   echo "---------------------------------------"
   docker-compose down
   cd ..
