@@ -45,6 +45,7 @@ pipeline {
     }
   }
   stage("docker-package"){
+    when{
     changeset "**/worker/**"
     }
     steps{
