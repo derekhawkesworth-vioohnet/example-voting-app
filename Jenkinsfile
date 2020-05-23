@@ -128,7 +128,7 @@ pipeline {
     }
   }
 
-  stage("worker-build"){
+  stage("vote-build"){
     agent {
         docker {
             image 'python:2.7.16-slim'
@@ -146,7 +146,7 @@ pipeline {
     }
   }
 
-  stage("worker-test"){
+  stage("vote-test"){
     agent {
         docker {
             image 'python:2.7.16-slim'
@@ -164,7 +164,7 @@ pipeline {
       }
     }
   }
-  stage("worker-docker-package"){
+  stage("vote-docker-package"){
     agent any
     when{
     changeset "**/vote/**"
