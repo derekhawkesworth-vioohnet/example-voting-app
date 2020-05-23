@@ -183,6 +183,9 @@ pipeline {
   }
   stage("docker-deploy-to-devint"){
     agent any
+    when{
+      branch 'master'
+    }
     steps{
       echo 'Deploy instavote app with docker compose'
       sh 'docker-compose up -d'
