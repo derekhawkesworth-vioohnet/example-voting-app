@@ -184,8 +184,8 @@ pipeline {
   stage("docker-deploy-to-devint"){
     agent any
     steps{
-    echo 'Deploy instavote app with docker compose'
-    sh 'docker-compose up -d'
+      echo 'Deploy instavote app with docker compose'
+      sh 'docker-compose up -d'
     }
   }
   }
