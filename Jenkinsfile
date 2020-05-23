@@ -181,6 +181,21 @@ pipeline {
         }
     }
   }
+
+  stage('Sonarqube') {
+  
+            agent any
+            environment{
+              sonarpath = tool 'SonarScanner'
+            }
+            steps {
+                echo 'Running Sonarqube Analysis..'
+                  withSonarQubeEnv('sonar') {
+                    sh "${sonarpath}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+                  }
+            }
+  }
+
   stage("docker-deploy-to-devint"){
     agent any
     when{
