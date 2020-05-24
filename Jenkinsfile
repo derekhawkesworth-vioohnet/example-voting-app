@@ -165,7 +165,7 @@ pipeline {
     }
   }
 
-  stage("vote-integration")
+  stage("vote-integration"){
     agent any
     when {
       changeset "**/vote/**"
@@ -177,6 +177,7 @@ pipeline {
         sh 'integration_test.sh'
       }
     }
+  }
 
   stage("vote-docker-package"){
     agent any
