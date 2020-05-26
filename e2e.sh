@@ -13,5 +13,4 @@ docker-compose ps
 
 docker-compose run --rm e2e
 
-docker-compose down 
 
