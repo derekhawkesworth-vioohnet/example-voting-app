@@ -1,0 +1,15 @@
+---
+resources:
+  - name: resource-result
+    type: git
+    source:
+      uri: https://github.com/vioohnet/example-voting-app.git
+      branch: master
+
+jobs:
+  - name: job-result-build
+    public: true
+    plan:
+      - get: resource-result
+      - task: build
+        file: result/task.yml
